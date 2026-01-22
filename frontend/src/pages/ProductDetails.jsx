@@ -23,7 +23,7 @@ const [size, setSize] = useState(product.sizes[false] || "");
     <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 p-10">
 
       {/* Image */}
-      <img src={product.image} className="w-full" />
+      <img src={product.image} className="w-full max-h-[500px] object-contain" />
 
       {/* Info */}
       <div>

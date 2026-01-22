@@ -1,5 +1,5 @@
 import React from 'react'
-import ForeverLogo from "../assets/forever.png"
+import LimoLogo from "../assets/limo.png"
 import Search_iconLogo from "../assets/Search_icon.png"
 import ProfileLogo from "../assets/Profile.png"
 import Shopping_cartLogo from "../assets/Shopping_cart.png"
@@ -20,9 +20,13 @@ import { ShopContext } from '../context/ShopContext'
  const [visible, setVisible] = useState(false);
   return (
     <div className='flex items-center justify-between py-4 font-medium'>
-   <Link to='/'> <img className='w-30' src={ForeverLogo}/> </Link>
+   <Link to='/'> 
+ <p className='text-2.5xl '>Limo’s</p><p>
+—— STORE ——
+</p>
+    </Link>
     
-    <ul className='hidden sm:flex gap-5 text-[18px] text-black'>
+    <ul className='hidden sm:flex gap-5 text-[18px] text-black py-6 pb-8'>
     <NavLink to='/' className='flex flex-col items-center gap-1'>
     <p>HOME</p>
     <hr className='w-2/4 border-none h-[1.5px] bg-gray-700' />

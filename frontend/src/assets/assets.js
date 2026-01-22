@@ -14,15 +14,13 @@ import Man4Logo from './man4.webp'
 import Man5Logo from './man5.webp'
 import Man6Logo from './man6.jpg'  
 import Man7Logo from './man7.jpg'   
-import W1Logo from './w1.webp'
+import wtopLogo from './wtop.jpg'
 import W2Logo from './w2.webp'
-import W3Logo from './w3.webp'
-import W4Logo from './w4.webp'
-import W5Logo from './w5.webp'
-import W6Logo from './w6.webp'
-import W7Logo from './w7.webp'
-
-
+import wLogo from './w.jpg'
+import wwLogo from './ww.jpg'
+import wtshirtLogo from './wtshirt.webp'
+import wjacketLogo from './wjacket.jpg'
+import wcorty from './wcorty.webp'
 export const products = [
 
   {
@@ -30,7 +28,7 @@ export const products = [
     name: "Women's Casual Cotton Top",
     description: "Soft breathable cotton top perfect for daily use.",
     price: 750,
-    image: W1Logo,
+    image: wLogo,
     category: "Women",
     subCategory: "Topwear",
     sizes: ["S", "M", "L"],
@@ -54,7 +52,7 @@ export const products = [
     name: "Women Knit Winter Sweater",
     description: "Warm knitted sweater for winter outings.",
     price: 1600,
-    image: W3Logo,
+    image: wwLogo,
     category: "Women",
     subCategory: "Winterwear",
     sizes: ["M", "L", "XL"],
@@ -66,7 +64,7 @@ export const products = [
     name: "Women Stylish Tops Combo",
     description: "Trendy stylish top made from premium cotton.",
     price: 820,
-    image: W4Logo,
+    image: wtopLogo,
     category: "Women",
     subCategory: "Topwear",
     sizes: ["S", "M", "L"],
@@ -78,7 +76,7 @@ export const products = [
     name: "Women's Long Sleeve Shirt",
     description: "Premium full sleeve shirt for office and casual wear.",
     price: 1150,
-    image: W5Logo,
+    image: wtshirtLogo,
     category: "Women",
     subCategory: "Shirt",
     sizes: ["M", "L"],
@@ -90,7 +88,7 @@ export const products = [
     name: "Women Winter Fleece Jacket",
     description: "Cozy fleece jacket designed for cold weather.",
     price: 1800,
-    image: W6Logo,
+    image: wjacketLogo,
     category: "Women",
     subCategory: "Winterwear",
     sizes: ["S", "M", "L", "XL"],
@@ -102,7 +100,7 @@ export const products = [
     name: "Women Trendy Cotton Kurti",
     description: "Soft cotton kurti ideal for casual and festive wear.",
     price: 1050,
-    image: W7Logo,
+    image: wcorty,
     category: "Women",
     subCategory: "Topwear",
     sizes: ["M", "L", "XL"],
