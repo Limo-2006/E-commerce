@@ -1,19 +1,9 @@
-import HeroLogo from './hero.webp'
-import Boy1Logo from './boy1.webp'
-import Boy2Logo from './boy2.webp'
-import Boy3Logo from './boy3.webp'
+
 import Boy4Logo from './boy4.jpg'   
 import Girl1Logo from './girl1.webp'
-import Girl2Logo from './girl2.webp'
-import Girl3Logo from './girl3.webp'
-import Girl4Logo from './girl4.webp'
 import Man1Logo from './man1.webp'
-import Man2Logo from './man2.webp'
-import Man3Logo from './man3.webp'
-import Man4Logo from './man4.webp'
 import Man5Logo from './man5.webp'
-import Man6Logo from './man6.jpg'  
-import Man7Logo from './man7.jpg'   
+import Man6Logo from './man6.jpg'   
 import wtopLogo from './wtop.jpg'
 import W2Logo from './w2.webp'
 import wLogo from './w.jpg'
@@ -21,6 +11,18 @@ import wwLogo from './ww.jpg'
 import wtshirtLogo from './wtshirt.webp'
 import wjacketLogo from './wjacket.jpg'
 import wcorty from './wcorty.webp'
+import premiumLogo from './premium.webp'
+import shirtLogo from './shirt.webp'
+import hodsLogo from './hods.webp'
+import formalLogo from './formal.jpg'
+import jacketLogo from './jacket.webp'
+import printLogo from './print.webp'
+import ptopLogo from './ptop.webp'
+import scartLogo from './scart.jpg'
+import weaterLogo from './weater.webp'
+import bjacketLogo from './bjacket.webp'
+import boyjinsLogo from './boyjins.avif'
+
 export const products = [
 
   {
@@ -35,8 +37,21 @@ export const products = [
     date: "2024-01-12",
     bestSeller: true
   },
+
+   {
+    _id: "m3",
+    name: "Men Hooded Sweatshirt",
+    description: "Warm hoodie with a soft inner lining.",
+    price: 1790,
+    image: hodsLogo,
+    category: "Men",
+    subCategory: "Winterwear",
+    sizes: ["S", "M", "L"],
+    date: "2023-12-22",
+    bestSeller: true
+  },
   {
-    _id: "whg2",
+    _id: "w2",
     name: "Women Floral Summer Dress",
     description: "Lightweight floral dress designed for comfort.",
     price: 1450,
@@ -71,6 +86,19 @@ export const products = [
     date: "2024-02-01",
     bestSeller: true
   },
+
+  {
+    _id: "b1",
+    name: "Boys Printed T-Shirt",
+    description: "Soft cotton t-shirt with cool graphic prints.",
+    price: 450,
+    image: printLogo,
+    category: "Boys",
+    subCategory: "Topwear",
+    sizes: ["S", "M", "L"],
+    date: "2024-01-21",
+    bestSeller: true
+  },
   {
     _id: "w5",
     name: "Women's Long Sleeve Shirt",
@@ -81,6 +109,19 @@ export const products = [
     subCategory: "Shirt",
     sizes: ["M", "L"],
     date: "2024-02-11",
+    bestSeller: false
+  },
+
+   {
+    _id: "g4",
+    name: "Girls Stylish Printed Top",
+    description: "Comfortable cotton top with colorful prints.",
+    price: 620,
+    image: ptopLogo,
+    category: "Girls",
+    subCategory: "Topwear",
+    sizes: ["S", "M"],
+    date: "2024-02-01",
     bestSeller: false
   },
   {
@@ -124,31 +165,20 @@ export const products = [
     name: "Men Denim Shirt",
     description: "Durable denim shirt with premium stitching.",
     price: 1250,
-    image: Man2Logo,
+    image: shirtLogo,
     category: "Men",
     subCategory: "Shirt",
     sizes: ["L", "XL", "XXL"],
     date: "2024-01-14",
     bestSeller: false
   },
-  {
-    _id: "m3",
-    name: "Men Hooded Sweatshirt",
-    description: "Warm hoodie with a soft inner lining.",
-    price: 1790,
-    image: Man3Logo,
-    category: "Men",
-    subCategory: "Winterwear",
-    sizes: ["S", "M", "L"],
-    date: "2023-12-22",
-    bestSeller: true
-  },
+ 
   {
     _id: "m4",
     name: "Men Formal Shirt",
     description: "Office wear formal shirt with sharp fitting.",
     price: 1100,
-    image: Man4Logo,
+    image: formalLogo,
     category: "Men",
     subCategory: "Shirt",
     sizes: ["M", "L", "XL"],
@@ -184,7 +214,7 @@ export const products = [
     name: "Men Premium Polo Shirt",
     description: "Classic polo shirt made from premium fabric.",
     price: 1200,
-    image: Man7Logo,
+    image: premiumLogo,
     category: "Men",
     subCategory: "Topwear",
     sizes: ["S", "M", "L", "XL"],
@@ -192,24 +222,13 @@ export const products = [
     bestSeller: false
   },
 
-  {
-    _id: "b1",
-    name: "Boys Printed T-Shirt",
-    description: "Soft cotton t-shirt with cool graphic prints.",
-    price: 450,
-    image: Boy1Logo,
-    category: "Boys",
-    subCategory: "Topwear",
-    sizes: ["S", "M", "L"],
-    date: "2024-01-21",
-    bestSeller: true
-  },
+  
   {
     _id: "b2",
     name: "Boys Stretchable Jeans",
     description: "Comfortable stretch jeans perfect for daily wear.",
     price: 890,
-    image: Boy2Logo,
+    image: boyjinsLogo,
     category: "Boys",
     subCategory: "Bottomwear",
     sizes: ["S", "M", "L"],
@@ -221,7 +240,7 @@ export const products = [
     name: "Boys Winter Jacket",
     description: "Warm winter jacket with a soft inner lining.",
     price: 1500,
-    image: Boy3Logo,
+    image: bjacketLogo,
     category: "Boys",
     subCategory: "Winterwear",
     sizes: ["M", "L"],
@@ -259,7 +278,7 @@ export const products = [
     name: "Girls Top & Skirt Set",
     description: "Pretty 2-piece top & skirt combo for girls.",
     price: 1200,
-    image: Girl2Logo,
+    image: scartLogo,
     category: "Girls",
     subCategory: "Topwear",
     sizes: ["S", "M", "L"],
@@ -271,25 +290,14 @@ export const products = [
     name: "Girls Winter Sweater",
     description: "Soft knitted sweater for warm winter days.",
     price: 890,
-    image: Girl3Logo,
+    image: weaterLogo,
     category: "Girls",
     subCategory: "Winterwear",
     sizes: ["S", "M", "L"],
     date: "2024-01-29",
     bestSeller: true
   },
-  {
-    _id: "g4",
-    name: "Girls Stylish Printed Top",
-    description: "Comfortable cotton top with colorful prints.",
-    price: 620,
-    image: Girl4Logo,
-    category: "Girls",
-    subCategory: "Topwear",
-    sizes: ["S", "M"],
-    date: "2024-02-01",
-    bestSeller: false
-  },
+ 
 
   // ---------- EXTRA ----------
   {
@@ -297,7 +305,7 @@ export const products = [
     name: "Women's Premium Jacket",
     description: "Premium stylish jacket with soft cushioning.",
     price: 2100,
-    image: HeroLogo,
+    image: jacketLogo,
     category: "Women",
     subCategory: "Winterwear",
     sizes: ["M", "L", "XL"],

@@ -14,6 +14,8 @@ import ProductDetails from './pages/ProductDetails'
 
 
 const App = () => {
+
+
   return (
     <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
     <Navbar />
@@ -28,8 +30,6 @@ const App = () => {
     <Route path='/place-order' element={<PlaceOrder />} />
     <Route path='/login' element={<Login/>} />
     <Route path='/order' element={<Order/>} />
-  
-  
   
 
     </Routes>

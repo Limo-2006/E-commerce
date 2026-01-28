@@ -1,8 +1,9 @@
 import React, { useState, useContext } from 'react';
-// import { ShopContext } from '../context/ShopContextProvider';
 import { ShopContext } from "../context/ShopContext";
-
 import ProductItem from '../component/ProductItem';
+import FilterPanel from './FilterPanel';
+
+
 
 
 const Collection = () => {
@@ -12,109 +13,74 @@ const Collection = () => {
   const [selectedTypes, setSelectedTypes] = useState([]);
   const [sortOption, setSortOption] = useState("Relevant");
   const [searchQuery, setSearchQuery] = useState("");
+  const [showFilter, setShowFilter] = useState(false);
 
   const toggleFilter = (value, state, setState) => {
-    if (state.includes(value)) {
-      setState(state.filter((item) => item !== value));
-    } else {
-      setState([...state, value]);
-    }
+    state.includes(value)
+      ? setState(state.filter((i) => i !== value))
+      : setState([...state, value]);
   };
 
-  // FILTER + SEARCH
-  const filteredProducts = products.filter((product) => {
-    // category
-    const categoryMatch =
+  /* ================= FILTER + SEARCH ================= */
+  const filteredProducts = products.filter((p) => {
+    const catMatch =
       selectedCategories.length === 0 ||
-      selectedCategories.includes(product.category);
+      selectedCategories.includes(products.category);
 
-    // type
     const typeMatch =
       selectedTypes.length === 0 ||
-      selectedTypes.includes(product.type);
+      selectedTypes.includes(products.category);
 
-    // search
-    const searchMatch =
-      product.name.toLowerCase().includes(searchQuery.toLowerCase());
+    const searchMatch = p.name
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase());
 
-    return categoryMatch && typeMatch && searchMatch;
+    return catMatch && typeMatch && searchMatch;
   });
 
-  // SORT
+  /* ================= SORT ================= */
   const sortedProducts = [...filteredProducts].sort((a, b) => {
     if (sortOption === "Low to High") return a.price - b.price;
     if (sortOption === "High to Low") return b.price - a.price;
-    return 0; // Relevant
+    return 0;
   });
 
   return (
     <div className="w-full px-[4%] py-10 flex gap-10 flex-col lg:flex-row">
 
-      {/* LEFT FILTERS */}
-      <div className="w-full lg:w-1/4">
-        <h2 className="text-xl font-semibold mb-5">FILTERS</h2>
+      {/* ================= FILTER PANEL ================= */}
+      <FilterPanel
+        showFilter={showFilter}
+        setShowFilter={setShowFilter}
+        selectedCategories={selectedCategories}
+        setSelectedCategories={setSelectedCategories}
+        selectedTypes={selectedTypes}
+        setSelectedTypes={setSelectedTypes}
+        toggleFilter={toggleFilter}
+      />
 
-        {/* SEARCH BAR */}
-        <div className="mb-6">
+      {/* ================= RIGHT CONTENT ================= */}
+      <div className="w-full lg:w-3/4 lg:ml-[25%]">
+
+        {/* MOBILE SEARCH + FILTER */}
+        <div className="flex gap-3 mb-4 lg:hidden">
           <input
-            type="text"
+            className="border px-3 py-2 rounded w-full"
             placeholder="Search products..."
-            className="w-full border px-3 py-2 rounded outline-none"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
+          <button
+            onClick={() => setShowFilter(true)}
+            className="border px-4 py-2 rounded"
+          >
+            Filter
+          </button>
         </div>
-
-        <div className="border p-4 mb-6">
-          <h3 className="text-lg font-semibold mb-3">CATEGORIES</h3>
-
-          <div className="space-y-2 text-gray-700">
-            {["Men", "Women", "Kids"].map((cat) => (
-              <label key={cat} className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  checked={selectedCategories.includes(cat)}
-                  onChange={() =>
-                    toggleFilter(cat, selectedCategories, setSelectedCategories)
-                  }
-                />
-                {cat}
-              </label>
-            ))}
-          </div>
-        </div>
-
-        {/* TYPE */}
-        <div className="border p-4">
-          <h3 className="text-lg font-semibold mb-3">TYPE</h3>
-
-          <div className="space-y-2 text-gray-700">
-            {["Topwear", "Bottomwear", "Winterwear"].map((type) => (
-              <label key={type} className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  checked={selectedTypes.includes(type)}
-                  onChange={() =>
-                    toggleFilter(type, selectedTypes, setSelectedTypes)
-                  }
-                />
-                {type}
-              </label>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* RIGHT CONTENT */}
-      <div className="w-full lg:w-3/4">
 
         {/* TITLE + SORT */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
-          <h2 className="text-2xl font-semibold flex items-center gap-3">
-            ALL COLLECTIONS
-            <span className="w-20 h-0.5 bg-gray-500"></span>
-          </h2>
-
+        <div className="flex justify-between mb-6">
+          <h2 className="text-2xl font-semibold">ALL COLLECTIONS</h2>
           <select
             className="border px-3 py-2 rounded"
             value={sortOption}
@@ -126,28 +92,19 @@ const Collection = () => {
           </select>
         </div>
 
-        {/* PRODUCT GRID */}
+        {/* PRODUCTS */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-
-          {sortedProducts.length > 0 ? (
+          {sortedProducts.length ? (
             sortedProducts.map((item) => (
-              <ProductItem
-                key={item._id}
-                id={item._id}
-                image={item.image}
-                price={item.price}
-                name={item.name}
-              />
+              <ProductItem key={item._id} {...item} />
             ))
           ) : (
-            <p className="text-gray-500 col-span-4">No products found...</p>
+            <p className="text-gray-500 col-span-4">No products found</p>
           )}
-
         </div>
-
       </div>
     </div>
   );
-}
+};
 
 export default Collection;

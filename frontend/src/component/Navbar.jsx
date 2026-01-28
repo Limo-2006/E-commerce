@@ -1,5 +1,4 @@
 import React from 'react'
-import LimoLogo from "../assets/limo.png"
 import Search_iconLogo from "../assets/Search_icon.png"
 import ProfileLogo from "../assets/Profile.png"
 import Shopping_cartLogo from "../assets/Shopping_cart.png"
