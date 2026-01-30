@@ -29,7 +29,7 @@ const Footer = () => {
            <p className='font-semibold  text-xl mb-5'>Get in Touch</p>
            <ul className='text-gray-700 flex flex-col gap-1'>
            <li>+1-212 345-7890</li>
-           <li>contact@Limo’sStore.com</li>
+           <li>contact@limo.com</li>
            </ul>
          </div>
 

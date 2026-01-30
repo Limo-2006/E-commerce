@@ -40,12 +40,12 @@ const ContactUsPage = () => {
             📞 Tel: (415) 555-0132
           </p>
           <p className="text-gray-600 mb-8">
-            ✉️ Email: admin@forever.com
+            ✉️ Email: admin@limo.com
           </p>
 
           {/* Career Info */}
           <h2 className="text-2xl font-semibold text-gray-800 mb-3">
-            Careers at Forever
+            Careers at Limo's Store
           </h2>
 
           <p className="text-gray-600 mb-6">
