@@ -27,7 +27,7 @@ const Collection = () => {
       selectedCategories.includes(item.category);
 
     const typeMatch =
-      selectedTypes.length === 0 || selectedTypes.includes(item.type);
+      selectedTypes.length === 0 || selectedTypes.includes(item.subCategory);
 
     const searchMatch = item.name
       .toLowerCase()

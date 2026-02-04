@@ -16,7 +16,7 @@ const CartTotals = () => {
   
 
   return (
-    <div className="w-full lg:w-[380px] sticky top-24">
+    <div className="w-full lg:w-[380px] lg:sticky lg:top-24 h-fit">
       <div className="border rounded-xl p-6 shadow-lg bg-white">
         <h2 className="text-xl font-semibold mb-6 border-b pb-3">
           Cart Totals

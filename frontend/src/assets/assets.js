@@ -24,7 +24,7 @@ import bjacketLogo from './bjacket.webp'
 import boyjinsLogo from './boyjins.avif'
 
 export const products = [
-
+  // ---------- WOMEN ----------
   {
     _id: "w1",
     name: "Women's Casual Cotton Top",
@@ -37,18 +37,41 @@ export const products = [
     date: "2024-01-12",
     bestSeller: true
   },
-
-   {
-    _id: "m3",
-    name: "Men Hooded Sweatshirt",
-    description: "Warm hoodie with a soft inner lining.",
-    price: 1790,
-    image: hodsLogo,
-    category: "Men",
-    subCategory: "Winterwear",
+  {
+    _id: "w4",
+    name: "Women Stylish Tops Combo",
+    description: "Trendy stylish top made from premium cotton.",
+    price: 820,
+    image: wtopLogo,
+    category: "Women",
+    subCategory: "Topwear",
     sizes: ["S", "M", "L"],
-    date: "2023-12-22",
+    date: "2024-02-01",
     bestSeller: true
+  },
+  {
+    _id: "w7",
+    name: "Women Trendy Cotton Kurti",
+    description: "Soft cotton kurti ideal for casual and festive wear.",
+    price: 1050,
+    image: wcorty,
+    category: "Women",
+    subCategory: "Topwear",
+    sizes: ["M", "L", "XL"],
+    date: "2023-12-25",
+    bestSeller: false
+  },
+  {
+    _id: "w5",
+    name: "Women's Long Sleeve Shirt",
+    description: "Premium full sleeve shirt for office and casual wear.",
+    price: 1150,
+    image: wtshirtLogo,
+    category: "Women",
+    subCategory: "Shirt",
+    sizes: ["M", "L"],
+    date: "2024-02-11",
+    bestSeller: false
   },
   {
     _id: "w2",
@@ -75,56 +98,6 @@ export const products = [
     bestSeller: false
   },
   {
-    _id: "w4",
-    name: "Women Stylish Tops Combo",
-    description: "Trendy stylish top made from premium cotton.",
-    price: 820,
-    image: wtopLogo,
-    category: "Women",
-    subCategory: "Topwear",
-    sizes: ["S", "M", "L"],
-    date: "2024-02-01",
-    bestSeller: true
-  },
-
-  {
-    _id: "b1",
-    name: "Boys Printed T-Shirt",
-    description: "Soft cotton t-shirt with cool graphic prints.",
-    price: 450,
-    image: printLogo,
-    category: "Boys",
-    subCategory: "Topwear",
-    sizes: ["S", "M", "L"],
-    date: "2024-01-21",
-    bestSeller: true
-  },
-  {
-    _id: "w5",
-    name: "Women's Long Sleeve Shirt",
-    description: "Premium full sleeve shirt for office and casual wear.",
-    price: 1150,
-    image: wtshirtLogo,
-    category: "Women",
-    subCategory: "Shirt",
-    sizes: ["M", "L"],
-    date: "2024-02-11",
-    bestSeller: false
-  },
-
-   {
-    _id: "g4",
-    name: "Girls Stylish Printed Top",
-    description: "Comfortable cotton top with colorful prints.",
-    price: 620,
-    image: ptopLogo,
-    category: "Girls",
-    subCategory: "Topwear",
-    sizes: ["S", "M"],
-    date: "2024-02-01",
-    bestSeller: false
-  },
-  {
     _id: "w6",
     name: "Women Winter Fleece Jacket",
     description: "Cozy fleece jacket designed for cold weather.",
@@ -137,17 +110,19 @@ export const products = [
     bestSeller: true
   },
   {
-    _id: "w7",
-    name: "Women Trendy Cotton Kurti",
-    description: "Soft cotton kurti ideal for casual and festive wear.",
-    price: 1050,
-    image: wcorty,
+    _id: "h1",
+    name: "Women's Premium Jacket",
+    description: "Premium stylish jacket with soft cushioning.",
+    price: 2100,
+    image: jacketLogo,
     category: "Women",
-    subCategory: "Topwear",
+    subCategory: "Winterwear",
     sizes: ["M", "L", "XL"],
-    date: "2023-12-25",
-    bestSeller: false
+    date: "2024-01-12",
+    bestSeller: true
   },
+
+  // ---------- MEN ----------
   {
     _id: "m1",
     name: "Men's Classic Cotton T-Shirt",
@@ -161,29 +136,16 @@ export const products = [
     bestSeller: true
   },
   {
-    _id: "m2",
-    name: "Men Denim Shirt",
-    description: "Durable denim shirt with premium stitching.",
-    price: 1250,
-    image: shirtLogo,
+    _id: "m3",
+    name: "Men Hooded Sweatshirt",
+    description: "Warm hoodie with a soft inner lining.",
+    price: 1790,
+    image: hodsLogo, // ✅ hodsLogo যেটা ছিল, সেটাই রেখেছি
     category: "Men",
-    subCategory: "Shirt",
-    sizes: ["L", "XL", "XXL"],
-    date: "2024-01-14",
-    bestSeller: false
-  },
- 
-  {
-    _id: "m4",
-    name: "Men Formal Shirt",
-    description: "Office wear formal shirt with sharp fitting.",
-    price: 1100,
-    image: formalLogo,
-    category: "Men",
-    subCategory: "Shirt",
-    sizes: ["M", "L", "XL"],
-    date: "2024-01-10",
-    bestSeller: false
+    subCategory: "Winterwear",
+    sizes: ["S", "M", "L"],
+    date: "2023-12-22",
+    bestSeller: true
   },
   {
     _id: "m5",
@@ -221,8 +183,44 @@ export const products = [
     date: "2024-02-02",
     bestSeller: false
   },
+  {
+    _id: "m2",
+    name: "Men Denim Shirt",
+    description: "Durable denim shirt with premium stitching.",
+    price: 1250,
+    image: shirtLogo,
+    category: "Men",
+    subCategory: "Shirt",
+    sizes: ["L", "XL", "XXL"],
+    date: "2024-01-14",
+    bestSeller: false
+  },
+  {
+    _id: "m4",
+    name: "Men Formal Shirt",
+    description: "Office wear formal shirt with sharp fitting.",
+    price: 1100,
+    image: formalLogo,
+    category: "Men",
+    subCategory: "Shirt",
+    sizes: ["M", "L", "XL"],
+    date: "2024-01-10",
+    bestSeller: false
+  },
 
-  
+  // ---------- BOYS ----------
+  {
+    _id: "b1",
+    name: "Boys Printed T-Shirt",
+    description: "Soft cotton t-shirt with cool graphic prints.",
+    price: 450,
+    image: printLogo,
+    category: "Boys",
+    subCategory: "Topwear",
+    sizes: ["S", "M", "L"],
+    date: "2024-01-21",
+    bestSeller: true
+  },
   {
     _id: "b2",
     name: "Boys Stretchable Jeans",
@@ -297,20 +295,16 @@ export const products = [
     date: "2024-01-29",
     bestSeller: true
   },
- 
-
-  // ---------- EXTRA ----------
   {
-    _id: "h1",
-    name: "Women's Premium Jacket",
-    description: "Premium stylish jacket with soft cushioning.",
-    price: 2100,
-    image: jacketLogo,
-    category: "Women",
-    subCategory: "Winterwear",
-    sizes: ["M", "L", "XL"],
-    date: "2024-01-12",
-    bestSeller: true
-  }
-
+    _id: "g4",
+    name: "Girls Stylish Printed Top",
+    description: "Comfortable cotton top with colorful prints.",
+    price: 620,
+    image: ptopLogo,
+    category: "Girls",
+    subCategory: "Topwear",
+    sizes: ["S", "M"],
+    date: "2024-02-01",
+    bestSeller: false
+  },
 ];

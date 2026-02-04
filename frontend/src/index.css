@@ -49,3 +49,18 @@ a.active hr{
   border: none;
   cursor: pointer;
 }
+
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.input:focus {
+  border-color: black;
+}
+
+

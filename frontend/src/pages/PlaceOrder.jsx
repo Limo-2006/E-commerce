@@ -2,44 +2,64 @@ import React from "react";
 import CartTotals from "../component/CartTotals";
 
 const PlaceOrder = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // browser নিজেই validation দেখাবে
+    if (!e.target.checkValidity()) {
+      e.target.reportValidity();
+      return;
+    }
+
+    alert("Order placed successfully ✅");
+  };
+
   return (
-    <div className="max-w-6xl mx-auto mt-16 grid grid-cols-1 md:grid-cols-2 gap-12">
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-6xl mx-auto mt-16 grid grid-cols-1 md:grid-cols-2 gap-12"
+    >
 
       {/* LEFT – DELIVERY INFO */}
-      <div>
-        <h2 className="text-xl font-semibold mb-6">
+      <div className="bg-white rounded-xl p-6 shadow-md">
+        <h2 className="text-xl font-semibold mb-6 pb-3">
           DELIVERY INFORMATION
         </h2>
 
-        <form className="space-y-4">
-          <div className="flex gap-4">
-            <input type="text" placeholder="First name" className="input" />
-            <input type="text" placeholder="Last name" className="input" />
-          </div>
-
-          <input type="email" placeholder="Email address" className="input" />
-          <input type="text" placeholder="Street" className="input" />
+        <div className="space-y-4">
 
           <div className="flex gap-4">
-            <input type="text" placeholder="City" className="input" />
-            <input type="text" placeholder="State" className="input" />
+            <input required type="text" placeholder="First name" className="input" />
+            <input required type="text" placeholder="Last name" className="input" />
+          </div>
+
+          <input required type="email" placeholder="Email address" className="input" />
+          <input required type="text" placeholder="Street" className="input" />
+
+          <div className="flex gap-4">
+            <input required type="text" placeholder="City" className="input" />
+            <input required type="text" placeholder="State" className="input" />
           </div>
 
           <div className="flex gap-4">
-            <input type="text" placeholder="Zipcode" className="input" />
-            <input type="text" placeholder="Country" className="input" />
+            <input required type="text" placeholder="Zipcode" className="input" />
+            <input required type="text" placeholder="Country" className="input" />
           </div>
 
-          <input type="text" placeholder="Phone" className="input" />
-        </form>
+          <input required type="text" placeholder="Phone" className="input" />
+        </div>
       </div>
 
       {/* RIGHT – CART TOTALS */}
-      <div>
-        <CartTotals />
+      <div className="flex flex-col gap-8">
 
-        {/* PAYMENT */}
-        <div className="mt-8">
+        {/* Sticky Cart */}
+        <div className="h-fit">
+          <CartTotals />
+        </div>
+
+        {/* Payment – Normal Flow */}
+        <div>
           <h2 className="text-lg font-semibold mb-4">
             PAYMENT METHOD
           </h2>
@@ -56,12 +76,17 @@ const PlaceOrder = () => {
             </label>
           </div>
 
-          <button className="mt-6 w-full bg-black text-white py-3">
+          <button
+            type="submit"
+            className="mt-6 w-full bg-black text-white py-3 mb-10 rounded-lg hover:bg-gray-800 transition"
+          >
             PLACE ORDER
           </button>
         </div>
+
       </div>
-    </div>
+
+    </form>
   );
 };
 

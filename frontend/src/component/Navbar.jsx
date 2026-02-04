@@ -27,30 +27,34 @@ import { ShopContext } from '../context/ShopContext'
   return (
     <div className='flex items-center justify-between py-4 font-medium'>
    <Link to='/'> 
- <p className='text-1.19xl font-serif font-bold'>Limo’s</p><p>
+ <p className='text-1.30xl font-serif font-bold'>Limo’s</p><p>
 —— STORE ——
 </p>
     </Link>
     
-    <ul className='hidden sm:flex gap-5 text-[18px] text-black py-6 pb-8'>
-    <NavLink to='/' className='flex flex-col items-center gap-1'>
-    <p>HOME</p>
-    <hr className='w-2/4 border-none h-[1.5px] bg-gray-700' />
+    <ul className='hidden sm:flex gap-8 text-[18px] text-black font-medium'>
+  {[
+    { name: "HOME", path: "/" },
+    { name: "ABOUT", path: "/about" },
+    { name: "COLLECTION", path: "/collection" },
+    { name: "CONTACT", path: "/contact" },
+  ].map((link) => (
+    <NavLink
+      key={link.name}
+      to={link.path}
+      className={({ isActive }) =>
+        `relative flex flex-col items-center gap-1 
+         text-gray-700 hover:text-black transition-colors duration-300
+         before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-0.5 before:bg-black before:transition-all before:duration-300
+         ${isActive ? "before:w-full" : ""} hover:before:w-full`
+      }
+    >
+      <p>{link.name}</p>
     </NavLink>
-    <NavLink to='/about' className='flex flex-col items-center gap-1'>
-    <p>ABOUT</p>
-    <hr className='w-2/4 border-none h-[1.5px] bg-gray-700' />
-    </NavLink>
-    <NavLink to='/collection' className='flex flex-col items-center gap-1'>
-    <p>COLLECTION</p>
-    <hr className='w-2/4 border-none h-[1.5px] bg-gray-700' />
-    </NavLink>
-    <NavLink to='/contact' className='flex flex-col items-center gap-1'>
-    <p>CONTACT</p>
-    <hr className='w-2/4 border-none h-[1.5px] bg-gray-700' />
-    </NavLink>
+  ))}
+</ul>
 
-    </ul>
+
 
     <div className='flex items-center gap-6'>
     <div>
@@ -86,20 +90,32 @@ import { ShopContext } from '../context/ShopContext'
     </div>
 
     <div className={`absolute top-0 right-0 overflow-hidden bg-white transition-all ${visible ? 'w-full' : 'w-0'}`}>
-    <div className='flex flex-col text-gray-600'>
+  <div className='flex flex-col text-gray-600'>
     <div onClick={()=>setVisible(false)} className='flex items-center gap-4 p-3'>
-    <img className='h-4 rotate-180 '  src={DropdownLogo} />
-    <p>Back</p>
+      <img className='h-4 rotate-180 '  src={DropdownLogo} />
+      <p>Back</p>
     </div>
-    <NavLink onClick={() =>setVisible(false)} className='py-2 pl-6 ' to='/'>HOME</NavLink>
-    <NavLink onClick={() =>setVisible(false)} className='py-2 pl-6 ' to='/collection'>COLLECTION</NavLink>
-    <NavLink onClick={() =>setVisible(false)} className='py-2 pl-6 ' to='/about'>ABOUT</NavLink>
-    <NavLink onClick={() =>setVisible(false)} className='py-2 pl-6 ' to='/contact'>CONTACT</NavLink>
+   {[
+  { name: "HOME", path: "/" },
+  { name: "COLLECTION", path: "/collection" },
+  { name: "ABOUT", path: "/about" },
+  { name: "CONTACT", path: "/contact" },
+].map((link) => (
+  <NavLink
+    key={link.name}
+    to={link.path}
+    onClick={() => setVisible(false)}
+    className={({ isActive }) =>
+      `py-2 pl-6 ${isActive ? "font-bold" : ""}`
+    }
+  >
+    {link.name}
+  </NavLink>
+))}
 
-    </div>
-    
-    
-    </div>
+  </div>
+</div>
+
 
 
     </div>
